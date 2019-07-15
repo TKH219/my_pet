@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_pet/home/home.dart';
+import 'package:my_pet/NavigationWidget.dart';
+import 'package:my_pet/home/Home.dart';
 
 void main() => runApp(MyApp());
 

@@ -4,6 +4,8 @@ On 7/7/2019
 */
 
 import 'package:flutter/material.dart';
+import 'package:my_pet/NavigationWidget.dart';
+import 'package:my_pet/home/PetItem.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,63 +13,6 @@ class Home extends StatefulWidget {
 }
 
 class HomeWidget extends State<Home> with TickerProviderStateMixin {
-  static const int HOME_TAB_INDEX = 0;
-  static const int SERVICES_TAB_INDEX = 1;
-  static const int PET_TAB_INDEX = 2;
-  static const int PROFILE_TAB_INDEX = 3;
-
-  TabController tabController;
-  int curentTabIndex = 0;
-
-  Widget topBar() {
-    return Material(
-        color: Colors.deepPurpleAccent,
-        child: TabBar(
-          controller: tabController,
-          tabs: <Widget>[
-            Tab(
-              child: Text(
-                "Home",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 15.0),
-              ),
-            ),
-            Tab(
-              child: Text(
-                "Services",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 15.0),
-              ),
-            ),
-            Tab(
-              child: Text(
-                "My Pet",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 15.0),
-              ),
-            ),
-            Tab(
-                child: Text(
-              "Profile",
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 15.0),
-            ))
-          ],
-        ));
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    tabController = TabController(length: 4, vsync: this);
-    tabController.addListener(() {
-      setState(() {
-        curentTabIndex =tabController.index;
-
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,11 +30,17 @@ class HomeWidget extends State<Home> with TickerProviderStateMixin {
           ),
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          topBar(),
-        ],
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 8.0),
+        child: Column(
+          children: <Widget>[
+            PetItem(),
+            PetItem(),
+            PetItem(),
+          ],
+        ),
       ),
+      bottomNavigationBar: NavigationWidget(),
     );
   }
 }
