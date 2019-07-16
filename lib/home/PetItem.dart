@@ -1,6 +1,6 @@
 /*
-Create by HaTK
-On 7/15/2019
+  Create by HaTK
+  On 7/15/2019
 */
 
 import 'package:flutter/material.dart';
@@ -94,7 +94,6 @@ class PetItemWidget extends State<PetItem> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-
                       Text('Height: 4.5 kg',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
