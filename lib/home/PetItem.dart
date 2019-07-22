@@ -15,20 +15,23 @@ class PetItemWidget extends State<PetItem> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 2.0,
+      elevation: 5.0,
       margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0.0),
       child: Container(
-        height: 80.0,
+        height: MediaQuery.of(context).size.height / 6,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Image.network(
               'https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg',
               fit: BoxFit.fill,
+              width: MediaQuery.of(context).size.width / 4,
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Container(
                         decoration: BoxDecoration(border: Border.all(color: Colors.black)),
@@ -37,6 +40,7 @@ class PetItemWidget extends State<PetItem> {
                           'My dog',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 17.0,
