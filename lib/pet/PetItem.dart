@@ -4,9 +4,11 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:my_pet/home/Home.dart';
-
+import 'package:my_pet/model/Pet.dart';
+import 'package:my_pet/asset/Resource.dart' as Resouces;
 class PetItem extends StatefulWidget {
+  Pet pet;
+  PetItem(pet);
   @override
   PetItemWidget createState() => PetItemWidget();
 }
@@ -22,11 +24,13 @@ class PetItemWidget extends State<PetItem> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Image.network(
-              'https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg',
-              fit: BoxFit.fill,
-              width: MediaQuery.of(context).size.width / 4,
-            ),
+//            widget.pet.avatar.isEmpty
+            Image.asset('Resouces.Assets.DogImageDefault'),
+//            : Image.network(
+//              widget.pet.avatar,
+//              fit: BoxFit.fill,
+//              width: MediaQuery.of(context).size.width / 4,
+//            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
@@ -37,7 +41,7 @@ class PetItemWidget extends State<PetItem> {
                         decoration: BoxDecoration(border: Border.all(color: Colors.black)),
                         margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0.0),
                         child: Text(
-                          'My dog',
+                          widget.pet.name,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
@@ -51,7 +55,7 @@ class PetItemWidget extends State<PetItem> {
                         decoration: BoxDecoration(border: Border.all(color: Colors.black)),
                         margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0.0),
                         child: Text(
-                          'Age: 3 months',
+                          'Age: ' + widget.pet.age.toString() + 'months',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
@@ -69,7 +73,7 @@ class PetItemWidget extends State<PetItem> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text('Vaccinated: YES',
+                      Text(widget.pet.vaccinated ? 'Vaccinated: YES' : 'Vaccinated: NO',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
@@ -98,14 +102,14 @@ class PetItemWidget extends State<PetItem> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text('Height: 4.5 kg',
+                      Text('Height: ' + widget.pet.height.toString() + ' m',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontStyle: FontStyle.italic,
                             fontSize: 14.0,
                           )),
-                      Text('Weight: 0.3 m',
+                      Text('Weight: ' + widget.pet.weight.toString() + ' kg',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(

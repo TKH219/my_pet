@@ -5,7 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_pet/NavigationWidget.dart';
-import 'package:my_pet/home/PetItem.dart';
+import 'package:my_pet/pet/PetItem.dart';
 import 'package:my_pet/asset/Resource.dart';
 
 class Home extends StatefulWidget {

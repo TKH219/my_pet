@@ -3,7 +3,7 @@
   On 7/9/2019
 */
 import 'package:flutter/material.dart';
-import 'package:my_pet/petProfile/PetDetail.dart';
+import 'package:my_pet/pet/Pets.dart';
 import 'package:my_pet/services/Services.dart';
 import 'package:my_pet/userProfile/UserProfile.dart';
 
@@ -17,8 +17,8 @@ class NavigationWidget extends StatefulWidget {
 class NavigationState extends State<NavigationWidget>
     with TickerProviderStateMixin {
   static const int HOME_TAB_INDEX = 0;
-  static const int SERVICES_TAB_INDEX = 1;
-  static const int PET_TAB_INDEX = 2;
+  static const int PET_TAB_INDEX = 1;
+  static const int SERVICES_TAB_INDEX = 2;
   static const int PROFILE_TAB_INDEX = 3;
 
   int currentIndex = 0;
@@ -77,7 +77,7 @@ class NavigationState extends State<NavigationWidget>
           offstage: currentIndex != HOME_TAB_INDEX,
         ),
         Offstage(
-          child: PetDetail(),
+          child: PetsWidget(),
           offstage: currentIndex != PET_TAB_INDEX,
         ),
         Offstage(
@@ -90,49 +90,48 @@ class NavigationState extends State<NavigationWidget>
         )
       ]),
       bottomNavigationBar: BottomNavigationBar(
-        selectedLabelStyle: TextStyle(fontSize: 20.0),
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                size: 18.0,
-                color: Colors.purpleAccent,
-              ),
-              title: Text(
-                "Home",
-                style: TextStyle(color: Colors.purpleAccent, fontSize: 15.0),
-              )),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.pets, size: 18.0, color: Colors.purpleAccent),
-              title: Text(
-                "Pet",
-                style: TextStyle(color: Colors.purpleAccent, fontSize: 15.0),
-              )),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.room_service,
-                  size: 18.0, color: Colors.purpleAccent),
-              title: Text(
-                "Services",
-                style: TextStyle(color: Colors.purpleAccent, fontSize: 15.0),
-              )),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.verified_user,
-                  size: 18.0, color: Colors.purpleAccent),
-              title: Text(
-                "User",
-                style: TextStyle(color: Colors.purpleAccent, fontSize: 15.0),
-              )),
-        ],
-        currentIndex: currentIndex,
-        iconSize: 18.0,
-        type: BottomNavigationBarType.fixed,
-        selectedFontSize: 20.0,
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        }
-          ),
+          selectedLabelStyle: TextStyle(fontSize: 20.0),
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  size: 18.0,
+                  color: Colors.purpleAccent,
+                ),
+                title: Text(
+                  "Home",
+                  style: TextStyle(color: Colors.purpleAccent, fontSize: 15.0),
+                )),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.pets, size: 18.0, color: Colors.purpleAccent),
+                title: Text(
+                  "Pet",
+                  style: TextStyle(color: Colors.purpleAccent, fontSize: 15.0),
+                )),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.room_service,
+                    size: 18.0, color: Colors.purpleAccent),
+                title: Text(
+                  "Services",
+                  style: TextStyle(color: Colors.purpleAccent, fontSize: 15.0),
+                )),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.verified_user,
+                    size: 18.0, color: Colors.purpleAccent),
+                title: Text(
+                  "User",
+                  style: TextStyle(color: Colors.purpleAccent, fontSize: 15.0),
+                )),
+          ],
+          currentIndex: currentIndex,
+          iconSize: 18.0,
+          type: BottomNavigationBarType.fixed,
+          selectedFontSize: 20.0,
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          }),
     );
-    }
   }
+}

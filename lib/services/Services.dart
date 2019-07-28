@@ -5,7 +5,8 @@
 import 'package:flutter/material.dart';
 //import 'package:user/support/widget/NoneExistentAppBar.dart';
 import 'package:my_pet/asset/Resource.dart';
-import 'package:my_pet/home/PetItem.dart';
+import 'package:my_pet/model/Pet.dart';
+import 'package:my_pet/pet/PetItem.dart';
 
 class ServicesWidget extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class ServicesWidget extends StatefulWidget {
 }
 
 class ServicesWidgetState extends State<ServicesWidget> {
+  Pet pet;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,9 +22,9 @@ class ServicesWidgetState extends State<ServicesWidget> {
         padding: EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 8.0),
         child: Column(
           children: <Widget>[
-            PetItem(),
-            PetItem(),
-            PetItem(),
+            PetItem(pet),
+            PetItem(pet),
+            PetItem(pet),
           ],
         ),
       ),
