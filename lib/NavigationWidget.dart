@@ -3,11 +3,10 @@
   On 7/9/2019
 */
 import 'package:flutter/material.dart';
-import 'package:my_pet/pet/Pets.dart';
-import 'package:my_pet/services/Services.dart';
-import 'package:my_pet/userProfile/UserProfile.dart';
-
-import 'home/Home.dart';
+import 'package:my_pet/widget/home/Home.dart';
+import 'package:my_pet/widget/pet/Pets.dart';
+import 'package:my_pet/widget/services/Services.dart';
+import 'package:my_pet/widget/userProfile/UserProfile.dart';
 
 class NavigationWidget extends StatefulWidget {
   @override

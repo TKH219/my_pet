@@ -5,7 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_pet/model/Pet.dart';
-import 'package:my_pet/pet/PetItem.dart';
+import 'package:my_pet/widget/pet/PetItem.dart';
 
 class PetsWidget extends StatefulWidget {
   @override
@@ -14,7 +14,6 @@ class PetsWidget extends StatefulWidget {
 
 class PetsState extends State<PetsWidget> {
   List<Pet> listPet = [
-//    Pet(Pet(name, age, petID, kind, vaccinated, listImage, avatar, height, weight, throughbred))
     Pet(
         "Noob",
         2,

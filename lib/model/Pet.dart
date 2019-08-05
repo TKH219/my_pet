@@ -17,8 +17,26 @@ class Pet {
   double weight;
   bool throughbred;
 
-  Pet(this.name, this.age, this.petID, this.kind, this.vaccinated,
-      this.listImage, this.avatar, this.height, this.weight, this.throughbred);
-
-
+  Pet(
+      String name,
+      int age,
+      String petID,
+      String kind,
+      bool vaccinated,
+      List<String> listImage,
+      String avatar,
+      double height,
+      double weight,
+      bool throughbred) {
+    this.avatar = avatar;
+    this.weight = weight;
+    this.height = height;
+    this.throughbred = throughbred;
+    this.listImage = listImage;
+    this.vaccinated = vaccinated;
+    this.kind = kind;
+    this.petID = petID;
+    this.age = age;
+    this.name = name;
+  }
 }

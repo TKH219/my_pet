@@ -4,8 +4,8 @@
 */
 import 'package:flutter/material.dart';
 import 'package:my_pet/NavigationWidget.dart';
-import 'package:my_pet/home/Home.dart';
-import 'package:my_pet/services/Services.dart';
+import 'package:my_pet/widget/home/Home.dart';
+import 'package:my_pet/widget/services/Services.dart';
 
 void main() => runApp(MyApp());
 
