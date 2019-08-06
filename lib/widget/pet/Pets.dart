@@ -26,7 +26,7 @@ class PetsState extends State<PetsWidget> {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqX6jQoMOkN3fMi-OSwKOCCgFjwyw3pF070ID4p9z47QxisDPd",
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7_BE-cszmVF1tmXEXcfTZ6typIr0V6s6NcUcLXcPJgCzq3SaO"
         ],
-        "https://kenh14cdn.com/zoom/700_438/2017/vi-sao-cho-phu-quoc-co-gia-hang-tram-trieu-dong-11-1491210716454-13-0-374-699-crop-1491215508807.jpg",
+        "https://cdn.editorchoice.com/wp-content/uploads/2019/06/dogtilt.jpg",
         0.8,
         5.7,
         true),
@@ -42,7 +42,7 @@ class PetsState extends State<PetsWidget> {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqX6jQoMOkN3fMi-OSwKOCCgFjwyw3pF070ID4p9z47QxisDPd",
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7_BE-cszmVF1tmXEXcfTZ6typIr0V6s6NcUcLXcPJgCzq3SaO"
         ],
-        "https://kenh14cdn.com/zoom/700_438/2017/vi-sao-cho-phu-quoc-co-gia-hang-tram-trieu-dong-11-1491210716454-13-0-374-699-crop-1491215508807.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSympkVrlM_Rg5yClfsdKLPwitlHW_3XtB6KE5rdZSFs6Ly0Xvk",
         0.8,
         5.7,
         true),

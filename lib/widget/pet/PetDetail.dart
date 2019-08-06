@@ -3,6 +3,7 @@
   On 7/9/2019
 */
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_images_slider/flutter_images_slider.dart';
 
@@ -34,47 +35,38 @@ class PetDetailWidget extends State<PetDetail> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-
-      children: <Widget>[
-        Container(
-//          width: MediaQuery.of(context).size.width / 3,
-          padding: EdgeInsets.fromLTRB(0, 0, 0, 8.0),
-          child: ImagesSlider(
-            items: map<Widget>(imgList, (index, i) {
-              return Container(
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: NetworkImage(i), fit: BoxFit.cover)),
-              );
-            }),
-            autoPlay: true,
-//            viewportFraction: 1.0,
-//            aspectRatio: 2.0,
-            distortion: false,
-//            align: IndicatorAlign.bottom,
-//            indicatorWidth: 5,
-            updateCallback: (index) {
-              setState(() {
-                _current = index;
-              });
-            },
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.fromLTRB(0.0, 8.0, 8.0, 8.0),
-              child: Text("Name:"),
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.fromLTRB(0, 0, 0, 8.0),
+            child: CarouselSlider(
+              height: 200.0,
+              items: map<Widget>(imgList, (index, i) {
+                return Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(i), fit: BoxFit.cover)),
+                );
+              }),
+              autoPlay: true,
             ),
-            Container(
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.fromLTRB(0.0, 8.0, 8.0, 8.0),
+                child: Text("Name:"),
+              ),
+              Container(
 //              padding: EdgeInsets.fromLTRB(0.0, 8.0, 8.0, 8.0),
-              child: Text("My Dog"),
-            )
-          ],
-        )
-      ],
+                child: Text("My Dog"),
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }
