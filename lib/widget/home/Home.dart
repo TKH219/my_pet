@@ -28,16 +28,42 @@ class HomeWidget extends State<Home> with TickerProviderStateMixin {
     );
   }
 
+  Widget homeItem(String name) {
+    return Card(
+        margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+        child: GestureDetector(
+          onTap: (){
+            print("Did tap the grid item");
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.purpleAccent,
+                borderRadius: BorderRadius.all(Radius.circular(5.0))),
+            child: Center(
+                child: Text(
+                  name,
+                  maxLines: 1,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 18.0,
+                  ),
+                )),
+          ),
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: GridView.builder(
+              itemCount: services.length,
               gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
               itemBuilder: (context, index) {
-                return Card(child: Text(services[index]));
+                return homeItem(services[index]);
               })),
     );
   }

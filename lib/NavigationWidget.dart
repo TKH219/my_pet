@@ -33,7 +33,7 @@ class NavigationState extends State<NavigationWidget>
 //        break;
 //      case PET_TAB_INDEX:
 //        Navigator.push(context,
-//            MaterialPageRoute(builder: (context) => PetDetail()));
+//            MaterialPageRoute(builder: (context) => Pets()));
 //        break;
 //      case SERVICES_TAB_INDEX:
 //        Navigator.push(context,
@@ -76,7 +76,7 @@ class NavigationState extends State<NavigationWidget>
           offstage: currentIndex != HOME_TAB_INDEX,
         ),
         Offstage(
-          child: PetsWidget(),
+          child: Pets(),
           offstage: currentIndex != PET_TAB_INDEX,
         ),
         Offstage(

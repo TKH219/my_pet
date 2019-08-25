@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:my_pet/model/Pet.dart';
 import 'package:my_pet/widget/pet/PetItem.dart';
 
-class PetsWidget extends StatefulWidget {
+class Pets extends StatefulWidget {
   @override
   PetsState createState() => PetsState();
 }
 
-class PetsState extends State<PetsWidget> {
+class PetsState extends State<Pets> {
   List<Pet> listPet = [
     Pet(
         "Noob",
